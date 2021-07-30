@@ -1,6 +1,7 @@
 body {
   background-color:#ffffff00 !important;
   font-family: omnes-pro, sans-serif!important;
+  color: #575757;
 }
 a, button {
   cursor: pointer;
@@ -304,7 +305,10 @@ p a {
 }
 .mn-ent-img{
   position: relative;
+  line-height: 0;
 }
+.small_container{width: 100%; max-width: 788px; display: block; margin: 0 auto}
+.mn-small-container-stories{width: 100%; max-width: 1199px; display: block; margin: 0 auto}
 .mn-enter-content{
   position: absolute;
   top: 50%;
@@ -315,7 +319,9 @@ p a {
 }
 .mn-ent-img .mn-ent-img-bg {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
   overflow-y: hidden;
 }
 .mn-ent-img figure.mn-ent-logo {
@@ -413,17 +419,159 @@ p a {
   height: 100%;
 }
 .slick-arrow{
+  width: 44px;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 50%;
-  color: #fff !important;
-  z-index: 999;
-  font-size: 14px;
-  line-height: 40px;
-  margin-top: -30px;
+  margin-top: -16px;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  font-size: 0px;
+  z-index: 1;
   background-color: #0000001f!important;
-  display: inline-block;
-  padding: 10px;
   transition: background-color 200ms cubic-bezier(.25,.46,.45,.94);
+}
+.slick-prev:before, .slick-next:before {
+  content: '';
+}
+.slick-prev {
+  left: -15px;
+}
+.slick-next {
+  right: -15px;
+}
+.slick-arrow.slick-next svg {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  fill: #fff;
+  transform: rotate(180deg);
+}
+.slick-arrow svg{
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  fill: #fff;
+
+}
+.mn-home-text-content{
+  padding-top: 34px;
+  width: 100%; max-width: 788px; display: block; margin: 0 auto
+}
+.mn-home-text-content h1{
+  text-align: center;
+  white-space: pre-wrap;
+  margin-top: 0;
+  color: #222;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .06em;
+}
+.mn-home-text-content p{
+  color: #575757;
+  text-align: center;
+  white-space: pre-wrap;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.8em;
+  font-size: 15px;
+  text-transform: none;
+  text-decoration: none;
+  margin: 0 0 1em;
+}
+.mn-home-text-content h2{
+
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .06em;
+  text-align: center;
+  white-space: pre-wrap;
+}
+.mn-story-album figure{
+  margin: 0;
+  display: block;
+  height: 400px;
+  width: 100%;
+  padding-bottom: 18px;
+}
+.mn-story-album figure img{
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+.mn-story-album .mn-image-caption{
+  font-size: 12px;
+  line-height: 1.68em;
+
+  font-weight: 300;
+  font-style: normal;
+  text-transform: none;
+  text-decoration: none;
+  margin: 0 0 1em;
+}
+.mn-story-image{
+  margin-bottom: 50px;
+}
+.mn-story-desc{
+  margin-bottom: 16px;
+}
+.mn-story-desc h1{
+  margin: 0 0 .2em;color: #222;font-weight: 300;
+  font-style: normal;
+  line-height: 1.2em;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .06em;
+
+}.mn-story-desc .story-date{
+   font-weight: 300;
+   font-style: normal;
+   line-height: 1.8em;
+   font-size: .9em;
+   color: #b3b3b3;
+}
+.mn-story-desc .story-hasTag{
+color: #575757;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.8em;
+  font-size: 15px;
+  text-transform: none;
+  text-decoration: none;
+  margin: 1em 0;
+}
+.mn-story-desc .story-red-more{
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.8em;
+  font-size: 15px;
+  text-transform: none;
+  text-decoration: none;
+}
+.mn-story-desc .mn-like-comment{
+  margin-right: 1em;
+  color: #b3b3b3;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.8em;
+  font-size: 15px;
+  text-transform: none;
+  text-decoration: none;
 }
 @media (min-width: 576px) {
   .col-sm {
@@ -645,6 +793,9 @@ p a {
   }
   .mt-md-0 {
     margin-top: 0 !important;
+  }
+  .mt-md-1 {
+    margin-top: 30px !important;
   }
 }
 @media (min-width: 992px) {

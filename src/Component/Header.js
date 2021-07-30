@@ -1,6 +1,12 @@
 import React from 'react';
+import {useHistory} from "react-router-dom";
 
 const Header = () => {
+    let history = useHistory()
+
+    const onRedirect = (url) => {
+        history.push(url)
+    }
     return(
         <div className="mn-header">
             <figure>
@@ -8,10 +14,10 @@ const Header = () => {
             </figure>
             <div className="mn-nav">
                 <ul>
-                    <li className="active-menu">Home</li>
-                    <li>Stories</li>
-                    <li>About</li>
-                    <li>Enquire</li>
+                    <li className="active-menu" onClick={() => onRedirect('/home')}>Home</li>
+                    <li onClick={() => onRedirect('/stories')}>Stories</li>
+                    <li onClick={() => onRedirect('/about')}>About</li>
+                    <li onClick={() => onRedirect('/enquire')}>Enquire</li>
                 </ul>
             </div>
         </div>
