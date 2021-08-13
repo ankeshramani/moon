@@ -1,11 +1,7 @@
-
+*{box-sizing: border-box}
 @font-face {
   font-family: "AvenirNext";
   src: url("./font/AvenirNext-Regular-08.ttf");
-  src: url("./font/AvenirNext-Regular-08.ttf?#iefix") format("embedded-opentype"),
-  url("./font/AvenirNext-Regular-08.ttf") format("ttf"),
-  url("./font/AvenirNext-Regular-08.ttf") format("woff");
-
 }
 @font-face {
   font-family: "Didot";
@@ -430,14 +426,19 @@ p a {
 }
 .mn-slide{
   width: 788px!important;
-  height: 508px;
+  display: inline-block;
   margin: 0;
+  position: relative;
+  padding-bottom: 65%;
 }
 .mn-slide img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  left: 0;
+  top:0
 }
 .slick-arrow{
   width: 44px;
@@ -510,8 +511,7 @@ p a {
   margin: 0 0 1em;
 }
 .mn-home-text-content h2{
-
-  font-weight: 300;
+  font-weight: 300!important;
   font-style: normal;
   line-height: 1.2em;
   font-size: 1.6em;
@@ -524,15 +524,18 @@ p a {
 .mn-story-album figure{
   margin: 0;
   display: block;
-  height: 400px;
   width: 100%;
-  padding-bottom: 18px;
+  padding-bottom: 105%;
+  position: relative;
 }
 .mn-story-album figure img{
   width: 100%;
   object-fit: cover;
   object-position: center;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .mn-story-album .mn-image-caption{
   font-size: 12px;
@@ -602,7 +605,7 @@ color: #575757;
 }
 .mn-story-detils-content img{
   width: 100%;
-  margin-bottom: -3px;
+  margin-bottom: -5px;
 }
 .mn-en-form{
   width: 100%;
