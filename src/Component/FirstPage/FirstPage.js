@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
-import logo from '../../Img/logo1.png';
-import cover from '../../Img/rgerg.jpg'
+import logo from '../../Img/whiteTP.png';
+import cover from '../../Img/16.jpg'
 const FirstPage = () => {
     let history = useHistory()
 
@@ -9,9 +9,9 @@ const FirstPage = () => {
         history.push('/home')
     }
     return (
-        <div className='mn-ent-img' onClick={onRedirect}>
+        <div className='mn-ent-img' >
             <img className="mn-ent-img-bg" src={cover}/>
-            <div className="mn-enter-content">
+            <div className="mn-enter-content" onClick={onRedirect}>
                 <figure className="mn-ent-logo">
                     <img src={logo}/>
                 </figure>

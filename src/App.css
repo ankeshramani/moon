@@ -1,11 +1,7 @@
-
+*{box-sizing: border-box}
 @font-face {
   font-family: "AvenirNext";
   src: url("./font/AvenirNext-Regular-08.ttf");
-  src: url("./font/AvenirNext-Regular-08.ttf?#iefix") format("embedded-opentype"),
-  url("./font/AvenirNext-Regular-08.ttf") format("ttf"),
-  url("./font/AvenirNext-Regular-08.ttf") format("woff");
-
 }
 @font-face {
   font-family: "Didot";
@@ -18,10 +14,11 @@ body {
   font-family: 'AvenirNext'!important;
   color: #575757;
 }
-h1,h2{
+/*h1,h2{
   font-family: 'Didot'!important;
   font-weight: 600!important;
-}
+}*/
+
 a, button {
   cursor: pointer;
 }
@@ -30,7 +27,7 @@ a:focus, button:focus {
   box-shadow: none;
 }
 p a {
-  color: #007ace;
+  color: #575757;
   text-decoration: none;
 }
 .mx-0 {
@@ -344,7 +341,8 @@ p a {
   overflow-y: hidden;
 }
 .mn-ent-img figure.mn-ent-logo {
-  max-width: 108px;
+  max-width: 225px;
+  cursor: pointer;
 }
 .mn-ent-img figure.mn-ent-logo img{
   width: 100%;
@@ -381,16 +379,18 @@ p a {
   margin: 10px auto;
   padding: 50px 75px;
   overflow-x: hidden;
+  position: relative;
 }
 .mn-header{
   width: 100%;
   text-align: center;
-  margin-bottom:47px
+  margin-bottom:47px;
+  cursor: pointer;
 }
 .mn-header figure{
   margin: 0;
   display: inline-block;
-  height: 100px;
+  width: 155px;
 }
 .mn-header figure img{
   width: 100%;
@@ -430,14 +430,19 @@ p a {
 }
 .mn-slide{
   width: 788px!important;
-  height: 508px;
+  display: inline-block;
   margin: 0;
+  position: relative;
+  padding-bottom: 65%;
 }
 .mn-slide img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  left: 0;
+  top:0
 }
 .slick-arrow{
   width: 44px;
@@ -510,8 +515,7 @@ p a {
   margin: 0 0 1em;
 }
 .mn-home-text-content h2{
-
-  font-weight: 300;
+  font-weight: 300!important;
   font-style: normal;
   line-height: 1.2em;
   font-size: 1.6em;
@@ -524,15 +528,18 @@ p a {
 .mn-story-album figure{
   margin: 0;
   display: block;
-  height: 400px;
   width: 100%;
-  padding-bottom: 18px;
+  padding-bottom: 105%;
+  position: relative;
 }
 .mn-story-album figure img{
   width: 100%;
   object-fit: cover;
   object-position: center;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .mn-story-album .mn-image-caption{
   font-size: 12px;
@@ -596,13 +603,28 @@ color: #575757;
   font-size: 15px;
   text-transform: none;
   text-decoration: none;
+  cursor: pointer;
+}
+.mn-story-desc .mn-like-comment img{
+  height: 18px;
+  background-color: #999;
+  width: 18px;
+  padding: 3px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.mn-story-desc .mn-like-comment:hover{
+  color: #272727;
+}
+.mn-story-desc .mn-like-comment:hover img{
+  background-color: #d10000;
 }
 .mn-story-detils-content{max-width: 83.3333%;
   margin: 10px auto;
 }
 .mn-story-detils-content img{
   width: 100%;
-  margin-bottom: -3px;
+  margin-bottom: -5px;
 }
 .mn-en-form{
   width: 100%;
@@ -641,6 +663,26 @@ color: #575757;
 }
 .mn-en-btn:hover{
   opacity: .8;
+}
+ul.mn-text-image-item{width: 100%;display: inline-block;padding: 0;margin: 0;list-style: none}
+ul.mn-text-image-item li{width: 100%;display: flex; flex-wrap: wrap; justify-content: center;padding: 25px 0}
+.mtii-contener{flex:0 0 1080px;max-width: 1080px;padding-left: 15px;padding-right: 15px;}
+.mtii-contener figure{border: 1px solid #efefef; margin: 0; width: 100px;height: 100px;display: inline-block;position: relative;border-radius: 50%;
+  background-position: center; background-size: cover;background-repeat: no-repeat;
+}
+
+ul.mn-text-image-item li:nth-child(2n + 2){background-color: #57575714}
+ul.mn-text-image-item li:nth-child(2n + 2) .mtii-contener{text-align: right;}
+ul.mn-text-image-item li:nth-child(2n + 2) .mtii-contener .row{flex-direction: row-reverse;}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 @media (min-width: 576px) {
   .col-sm {
@@ -1766,6 +1808,13 @@ color: #575757;
 video{
   width: 100%;
 }
+.about-h1{
+  margin-top: -8px;
+  font-weight: 200;
+}
+.about p{
+  font-size: 11px;
+}
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left !important;
@@ -1775,6 +1824,12 @@ video{
   }
   .text-sm-center {
     text-align: center !important;
+  }
+  .mn-home-text-content p{
+    font-size: 6.5px;
+  }
+  .mn-story-desc .story-hasTag, .mn-story-desc .story-date{
+    font-size: 6.5px;
   }
 }
 @media (min-width: 768px) {
@@ -1800,6 +1855,12 @@ video{
   }
 }
 @media (min-width: 1200px) {
+  .mn-home-text-content p{
+    font-size: 15px;
+  }
+  .mn-story-desc .story-hasTag, .mn-story-desc .story-date{
+    font-size: 15px;
+  }
   .text-xl-left {
     text-align: left !important;
   }

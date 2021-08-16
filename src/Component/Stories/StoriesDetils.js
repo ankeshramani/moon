@@ -3,6 +3,7 @@ import Header from "../Header";
 import ApiService from "../../ApiService";
 import { useParams } from "react-router-dom";
 import moment from "moment";
+import likeIcon from "../../Img/icon_like.png";
 const StoriesDetils = () => {
     const apiService = new ApiService()
     const [storyDetailList, setStoryDetailList] = useState([])
@@ -18,7 +19,17 @@ const StoriesDetils = () => {
             setStoryDetailList(data.data)
         }
     }
+
+    const addLike = async () => {
+        const data = await apiService.addLike(id, storyDetails.like_count +1)
+        if(data && data.message == true){
+            setStoryDetails({...setStoryDetails, like_count:storyDetails.like_count +1})
+        } else {
+
+        }
+    }
     return(
+        <div>
         <div className="mn-inner-container">
             <Header/>
             <div className="mn-small-container-stories">
@@ -83,7 +94,20 @@ const StoriesDetils = () => {
                         })
                     }
                 </div>
+
             </div>
+            <div className="d-flex flex-wrap justify-content-between mn-story-desc">
+                <div>
+                    <span className="mn-like-comment">2 Comments</span>
+                    {/* <span className="mn-like-comment">Share</span>*/}
+                </div>
+                <div>
+                    <div className="mn-like-comment d-flex align-items-center" onClick={addLike}><img src={likeIcon}/><span style={{paddingTop:3}}>{storyDetails && storyDetails.like_count} Likes</span></div>
+                </div>
+
+            </div>
+        </div>
+
         </div>
     )
 }

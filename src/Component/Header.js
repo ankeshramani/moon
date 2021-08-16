@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
-import logo from '../Img/logo.png'
-const Header = () => {
+import logo from '../Img/BlackTP.png'
+const   Header = () => {
     let history = useHistory()
     const onRedirect = (url) => {
         history.push(url)
@@ -9,7 +9,7 @@ const Header = () => {
     const url = window.location.pathname
     return(
         <div className="mn-header">
-            <figure>
+            <figure  onClick={() => onRedirect('/')}>
                 <img src={logo}/>
             </figure>
             <div className="mn-nav">
@@ -17,6 +17,7 @@ const Header = () => {
                     <li className={url === "/home" ? "active-menu" : ''} onClick={() => onRedirect('/home')}>Home</li>
                     <li className={url === "/stories" ? "active-menu" : ''} onClick={() => onRedirect('/stories')}>Stories</li>
                     <li className={url === "/about" ? "active-menu" : ''} onClick={() => onRedirect('/about')}>About</li>
+                    <li className={url === "/feedback" ? "active-menu" : ''} onClick={() => onRedirect('/feedback')}>Feedback</li>
                     <li className={url === "/enquire" ? "active-menu" : ''} onClick={() => onRedirect('/enquire')}>Enquire</li>
                 </ul>
             </div>

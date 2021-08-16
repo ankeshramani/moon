@@ -54,27 +54,14 @@ const Home = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false,
+                    autoplay: true,
                 }
-            }
+            },
+
         ]
     };
 
@@ -96,9 +83,14 @@ const Home = () => {
                 </Slider>
             </div>
             <div className="mn-home-text-content">
-                <h1>"YOU FEEL. I FOCUS. WE FRAME”</h1>
-                <p>A wedding is a validation coupled with the showcase of  Love inclusive of various events with exotic venues, food, guests, dresses, jewellery and so on- What if it could never be recorded?</p>
+                <h1>"Every moment is fresh beginning”</h1>
+                {/*<p>A wedding is a validation coupled with the showcase of  Love inclusive of various events with exotic venues, food, guests, dresses, jewellery and so on- What if it could never be recorded?</p>
                 <p>A chronology of a  couple’s journey where they vow together to be One.</p>
+               */}
+                <p>Moonlight Pictures is a creative venture of Team Moonlight, Was founded by Surat-based photography enthusiasts, Raveeraj and Nikunj, in 2018. </p>
+                <p>
+                    Over a short span, the award-winning brand has garnered international acclaim for being one of the most coveted luxury destination wedding photographers and filmmakers.
+                </p>
                 <h2>WE ARE CREATING FICTION OUT OF REALITY.</h2>
             </div>
             <div className="mn-story-album">

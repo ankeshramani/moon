@@ -1,4 +1,5 @@
 import axios from "axios";
+import qs from 'qs';
 const baseUrl = "https://moonlightpictures.in/api";
 
 
@@ -17,14 +18,15 @@ export class ApiService {
     }
 
     async postMethod(url, data, headers,) {
+        let newData = qs.stringify(data);
         const config = {
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
         };
 
         let resData = '';
-        const response = await axios.post(url, data, config).catch(thrown => {
+        const response = await axios.post(url, newData, config).catch(thrown => {
             if (thrown.toString() === 'Cancel') {
                 resData = 'cancel';
             } else {
@@ -71,6 +73,15 @@ export class ApiService {
     }
     async getStoryImage(id){
         return await this.getData(`${baseUrl}/getStoryImage?story_id=${id}`);
+    }
+    async listFeedback(){
+        return await this.getData(`${baseUrl}/listFeedback`);
+    }
+    async addEnquire(payload){
+        return await this.postMethod(`${baseUrl}/addEnquire`, payload);
+    }
+    async addLike(id, likecount){
+        return await this.getData(`${baseUrl}/addLike?storyId=${id}&likecount=${likecount}`);
     }
 }
 

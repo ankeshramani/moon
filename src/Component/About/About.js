@@ -5,14 +5,14 @@ const About = () => {
     return(
         <div className="mn-inner-container">
             <Header/>
-            <div className="row align-items-center justify-content-center">
+            <div className="row justify-content-center">
                 <div className="col col-md-4 col-12 ">
                     <figure className="w-100" style={{margin:0}}>
                         <img className="w-100" src={'https://moonlightpictures.in/upload/website.jpg'}/>
                     </figure>
                 </div>
-                <div className="col col-md-4 col-12  text-center">
-                    <h1>Moonlight Pictures</h1>
+                <div className="col col-md-4 col-12  text-center about">
+                    <h1 className="about-h1">About MOONLIGHT</h1>
                     <p>Moonlight Pictures is a creative venture of Team Moonlight, Was founded by Surat-based photography enthusiasts, Raveeraj and Nikunj, in 2018. </p>
                     <p>
                         Over a short span, the award-winning brand has garnered international acclaim for being one of the most coveted luxury destination wedding photographers and filmmakers.

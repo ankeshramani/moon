@@ -6,7 +6,9 @@ import Stories from "./Component/Stories/Stories";
 import StoriesDetils from './Component/Stories/StoriesDetils'
 import About from './Component/About/About'
 import Enquire from "./Component/Enquire/Enquire";
+import Feedback from "./Component/Feedback/Feedback";
 import './App.css';
+
 
 
 const  App = () =>  {
@@ -20,6 +22,7 @@ const  App = () =>  {
                   <Route path="/stories" component={Stories}/>
                   <Route path="/about" component={About}/>
                   <Route path="/enquire" component={Enquire}/>
+                  <Route path="/feedback" component={Feedback}/>
               </Switch>
           </Router>
       </div>
