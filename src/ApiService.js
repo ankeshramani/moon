@@ -74,6 +74,9 @@ export class ApiService {
     async getStoryImage(id){
         return await this.getData(`${baseUrl}/getStoryImage?story_id=${id}`);
     }
+    async getComment(id){
+        return await this.getData(`${baseUrl}/getComment?story_id=${id}`);
+    }
     async listFeedback(){
         return await this.getData(`${baseUrl}/listFeedback`);
     }
@@ -82,6 +85,18 @@ export class ApiService {
     }
     async addLike(id, likecount){
         return await this.getData(`${baseUrl}/addLike?storyId=${id}&likecount=${likecount}`);
+    }
+    async addAnalytics(){
+        return await this.getData(`${baseUrl}/addAnalytics`);
+    }
+    async getHomePage(){
+        return await this.getData(`${baseUrl}/getHomePage`);
+    }
+    async homePageStory(){
+        return await this.getData(`${baseUrl}/homePageStory`);
+    }
+    async postComment(payload){
+        return await this.postMethod(`${baseUrl}/postComment`, payload);
     }
 }
 

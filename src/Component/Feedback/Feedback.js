@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react";
 import Header from "../Header";
 import ApiService from "../../ApiService";
+import Footer from "../Footer";
 
 const Feedback = () => {
     const apiService = new ApiService();
@@ -19,6 +20,7 @@ const Feedback = () => {
     }
     return(
         <div>
+            <div className='main_contain_area'>
             <div className="mn-inner-container pb-0 mb-0">
                 <Header/>
             </div>
@@ -34,8 +36,8 @@ const Feedback = () => {
                                               </figure>
                                         </div>
                                         <div className="col">
-                                            <h3>{x.title}</h3>
-                                            <p className="mn-story-desc">{x.description}</p>
+                                            <h3 className="mn-fb-h3">{x.title}</h3>
+                                            <p className="mn-fb-desc">{x.description}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -46,6 +48,8 @@ const Feedback = () => {
 
 
             </ul>
+            </div>
+            <Footer/>
         </div>
 
     )

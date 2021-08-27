@@ -1,11 +1,13 @@
 import React from "react";
 import Header from "../Header";
 import img from '../../Img/website.jpg'
+import Footer from "../Footer";
 const About = () => {
     return(
-        <div className="mn-inner-container">
+        <React.Fragment>
+        <div className="mn-inner-container main_contain_area">
             <Header/>
-            <div className="row justify-content-center">
+            <div className="row justify-content-center" style={{marginTop: 150}}>
                 <div className="col col-md-4 col-12 ">
                     <figure className="w-100" style={{margin:0}}>
                         <img className="w-100" src={'https://moonlightpictures.in/upload/website.jpg'}/>
@@ -33,6 +35,8 @@ const About = () => {
                 </div>
             </div>
         </div>
+            <Footer/>
+        </React.Fragment>
     )
 }
 export default About

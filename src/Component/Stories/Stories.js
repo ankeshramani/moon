@@ -4,6 +4,7 @@ import ApiService from "../../ApiService";
 import {useHistory} from "react-router-dom";
 import moment from "moment";
 import likeIcon from '../../Img/icon_like.png'
+import Footer from "../Footer";
 const Stories = () => {
     const apiService = new ApiService();
     let history = useHistory();
@@ -15,6 +16,20 @@ const Stories = () => {
     const storyList = async () => {
         const data = await apiService.storyList()
         if(data.data){
+            let storyData = [];
+            (data.data || []).map((x) => {
+                let obj ={
+                    title: x.title,
+                    story_id: x.story_id,
+                    Location: x.Location,
+                }
+                storyData.push(obj)
+            })
+            /*storyData.sort(function(a, b) {
+                return (a.story_id - b.story_id);
+            })*/
+            //window.localStorage.setItem("storyData", JSON.stringify(storyData))
+          //  localStorage.setItem('colorSetting', '#a4509b');
             setStoriesList(data.data)
         }
     }
@@ -35,7 +50,8 @@ const Stories = () => {
     }
 
     return(
-        <div className="mn-inner-container">
+        <React.Fragment>
+        <div className="mn-inner-container main_contain_area">
             <Header/>
             <div className="mn-small-container-stories">
 
@@ -73,6 +89,8 @@ const Stories = () => {
 
             </div>
         </div>
+            <Footer/>
+        </React.Fragment>
     )
 }
 export default Stories
